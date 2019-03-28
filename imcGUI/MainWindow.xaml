@@ -1,0 +1,55 @@
+﻿<Window x:Class="imcGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:imcGUI"
+        mc:Ignorable="d"
+        Title="Indice de masa Corporal" Height="330" Width="300">
+    <Grid Height="Auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Margin="12, 12, 12, 6">
+            <Label>Pesos en kilogramos:</Label>
+            <TextBox x:Name="PesoTextBox" GotFocus="PesoTextBox_GotFocus"/>
+        </DockPanel>
+
+        <DockPanel Grid.Row="1" Margin="12, 6, 12, 12">
+            <Label>Estatura en metros:</Label>
+            <TextBox x:Name="EstaturaTextBox"/>
+        </DockPanel>
+
+        <WrapPanel Grid.Row="2" Margin="12" HorizontalAlignment="Center">
+            <Button Height="24" Width="50" Margin="0, 0, 8, 0"
+                    Name="BotonCalcular" Click="BotonCalcular_Click" >
+                Calcular
+            </Button>
+            
+            <Button Height="24" Width="50" Margin="8, 0, 0, 0"
+                    Name="BotonLimpiar" Click="BotonLimpiar_Click">
+                Limpiar
+            </Button>
+        </WrapPanel>
+
+        <StackPanel Margin="12, 0, 0, 0" Orientation="Vertical" Grid.Row="3" 
+                    Name="imcLabel">
+            <Label>
+                Indice De Masa Corporal:
+            </Label>
+            
+            <Label HorizontalAlignment="Center" FontSize="20" x:Name="EstadoNutricionalLabel">0.0</Label>
+            <Label>Estado Nutricional:</Label>
+            
+            <Label FontSize="20" Margin="77, 0, 77, 0">Peso Normal:</Label>
+        </StackPanel>
+
+    </Grid>
+</Window>
